@@ -24,7 +24,7 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 4
+					"waitTimeInSeconds": 3
 				}
 			}
 		],

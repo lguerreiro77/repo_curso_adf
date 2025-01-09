@@ -1,11 +1,5 @@
 {
 	"name": "adf-cursoudemyadf",
-	"properties": {
-		"globalConfigurations": {
-			"factoryStagingLSReferenceName": "ls_datalake",
-			"factoryStagingLSType": "LinkedServiceReference"
-		}
-	},
 	"location": "centralus",
 	"identity": {
 		"type": "SystemAssigned",

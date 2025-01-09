@@ -1,0 +1,9 @@
+{
+	"name": "adf-cursoudemyadf",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ef4e5916-1fe0-4425-a336-1082e1065245",
+		"tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7"
+	}
+}

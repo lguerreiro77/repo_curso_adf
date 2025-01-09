@@ -1,0 +1,75 @@
+{
+	"name": "pipe_act04_runacts",
+	"properties": {
+		"activities": [
+			{
+				"name": "Exec Act01",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_act01_csvtoparquet",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec Act03",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec Act02",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_act03_sqltoparquet",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec Act02",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec Act01",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_act02_parquettosql",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "adf_03_handson_01"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-01-09T10:40:35Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
